@@ -13,7 +13,11 @@ const SignIn = ({setIsModalOpen}) => {
   // handle form submit
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log("first")
+    const form = e.target;
+    const email = form.email.value;
+    const role = form.role.value;
+    const password = form.password.value;
+    console.log(email, role, password)
   }
 
   return (
@@ -38,6 +42,7 @@ const SignIn = ({setIsModalOpen}) => {
             </svg>
             <input
               type="email"
+              name="email"
               className="grow"
               placeholder="email@example.com"
             />
@@ -62,7 +67,7 @@ const SignIn = ({setIsModalOpen}) => {
                   clipRule="evenodd"
                 />
               </svg>
-              <select defaultValue="Role" className="select select-primary w-full focus:outline-none border-none bg-transparent">
+              <select defaultValue="Role" name="role" className="select select-primary w-full focus:outline-none border-none bg-transparent">
                 <option disabled={true}>Role</option>
                 <option value="Candidate">Candidate</option>
                 <option value="Employee">Employee</option>
@@ -91,6 +96,7 @@ const SignIn = ({setIsModalOpen}) => {
             </svg>
             <input
               type="password"
+              name="password"
               className="grow"
               placeholder="Enter password"
             />
