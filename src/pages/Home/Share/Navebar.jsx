@@ -1,8 +1,9 @@
-import React from "react"
+import React, { useState } from "react"
 import Modal from "../../Auth/Modal";
 import { Link } from "react-router";
 
 const Navbar = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const menuList = <>
         <li><a>Item 1</a></li>
         <li>
@@ -19,7 +20,7 @@ const Navbar = () => {
     return (
         <>
             {/* SignIn form Modal */}
-            <Modal />
+            <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
             <div className="bg-base-100 shadow-sm">
                 <div className="navbar  max-w-7xl mx-auto">
                     <div className="navbar-start cursor-pointer">
@@ -31,8 +32,10 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className="navbar-end gap-2">
-                        <button className="btn btn-primary btn-sm lg:btn-md" onClick={() => document.getElementById('signInForm').showModal()}>Sign In</button>
-                        <div className="dropdown ">
+                        <button className="btn btn-primary btn-sm lg:btn-md" onClick={() => setIsModalOpen(true)}>Sign In</button>
+                        {/* menu for small device */}
+                        <div className="dropdown">
+                            {/* menu icon for small device */}
                             <div tabIndex={0} role="button" className="btn btn-primary btn-sm lg:hidden">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
                             </div>

@@ -1,28 +1,27 @@
 import React, { useRef, useState } from "react"
 import { Link } from "react-router";
 
-const SignIn = () => {
+const SignIn = ({setIsModalOpen}) => {
   const [newAccount, setNewAccount] = useState(false);
 
-  const modalRef = useRef(null);
-
-  // closes modal when clicked outside
-  const closeModal = (e) => {
-    if (modalRef.current && e.target === modalRef.current) {
-      modalRef.current.close();
-    }
-  };
-
+ 
   //handle toggle form
   const handleToggleForm = () => {
     setNewAccount(pre => !pre)
+  }
+
+  // handle form submit
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    console.log("first")
   }
 
   return (
     <div className="w-full mx-auto px-3">
       <h1 className="text-3xl"></h1>
       <h2 className="text-sm lg:text-lg font-bold text-center uppercase">{newAccount ? 'Create an account' : 'User Login'}</h2>
-      <form method="dialog" >
+      <form onSubmit={handleFormSubmit}>
+        {/* Email input field */}
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>
@@ -44,6 +43,7 @@ const SignIn = () => {
             />
           </label>
         </div>
+        {/* Role input field */}
         {newAccount ? (
           <div className="form-control mt-4">
           <label className="label">
@@ -71,6 +71,7 @@ const SignIn = () => {
   
           </div>
         ) : ""}
+        {/* Password input field */}
         <div className="form-control mt-4">
           <label className="label">
             <span className="label-text">Password</span>
@@ -94,23 +95,25 @@ const SignIn = () => {
               placeholder="Enter password"
             />
           </label>
+          {/* forget password */}
           {newAccount ? "" : (
             <label className="label" >
-              <Link to="/forgot-pass" ref={modalRef}  onClick={closeModal} className="label-text-alt link link-hover">
+              <Link to="/forgot-pass" className="label-text-alt link link-hover">
                 Forgot password?
               </Link>
             </label>
           )}
 
         </div>
-        <div className="form-control mt-6">
+        {/* submit button */}
+        <div className="form-control mt-6" onClick={() => setIsModalOpen(false)}>
           {newAccount ? (<button className="btn btn-primary w-full uppercase">Register</button>) : (<button className="btn btn-primary w-full uppercase">Login</button>)}
 
         </div>
       </form>
       <div className="divider">OR</div>
-      <div className="text-center">
-        {newAccount ? <p>Already have an account? <button className="text-primary underline" onClick={handleToggleForm}>Login</button></p> : <p>No account? <button className="text-primary underline" onClick={handleToggleForm}>Create An Account</button></p>}
+      <div className="text-center text-gray-500">
+        {newAccount ? <p>Already have an account? <button className="text-primary underline cursor-pointer" onClick={handleToggleForm}>Login</button></p> : <p>No account? <button className="text-primary underline cursor-pointer" onClick={handleToggleForm}>Create An Account</button></p>}
       </div>
     </div>
   )
