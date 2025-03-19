@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react"
 import { Link } from "react-router";
 
 const SignIn = () => {
-  const [newAccount, setNewAccount] = useState(true);
+  const [newAccount, setNewAccount] = useState(false);
 
   const modalRef = useRef(null);
 
@@ -95,10 +95,10 @@ const SignIn = () => {
             />
           </label>
           {newAccount ? "" : (
-            <label className="label">
-              <a href="#" className="label-text-alt link link-hover">
+            <label className="label" >
+              <Link to="/forgot-pass" ref={modalRef}  onClick={closeModal} className="label-text-alt link link-hover">
                 Forgot password?
-              </a>
+              </Link>
             </label>
           )}
 
