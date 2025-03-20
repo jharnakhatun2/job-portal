@@ -25,7 +25,7 @@ const Navbar = () => {
     if(loading){
         return <Loader/>
     }
-    
+
     return (
         <>
             {/* SignIn form Modal */}

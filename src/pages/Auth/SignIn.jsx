@@ -44,9 +44,9 @@ const SignIn = ({ setIsModalOpen }) => {
 
     // Password validation
     if (!formData.password) {
-      newErrors.password = "Password is required";
+      newErrors.password = <p>Password is required</p>;
     } else if (formData.password.length < 6) {
-      newErrors.password = "Password must be at least 6 characters";
+      newErrors.password = <p>Password must be at least 6 characters</p>;
     }
 
     // Role validation (only for registration)
@@ -83,9 +83,9 @@ const SignIn = ({ setIsModalOpen }) => {
     }
   };
 
-  if(loading){
-    return <Loader/>
-}
+  if (loading) {
+    return <Loader />
+  }
 
   return (
     <div className="w-full mx-auto px-3">
@@ -194,7 +194,7 @@ const SignIn = ({ setIsModalOpen }) => {
           {/* Forget password (only for login) */}
           {!newAccount && (
             <label className="label">
-              <Link to="/forgot-pass" className="label-text-alt link link-hover">
+              <Link to="/forgot-pass" className="label-text-alt link link-hover" onClick={() => setIsModalOpen(false)}>
                 Forgot password?
               </Link>
             </label>
