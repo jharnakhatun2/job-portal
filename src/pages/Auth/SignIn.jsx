@@ -15,9 +15,15 @@ const SignIn = ({setIsModalOpen}) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
-    const role = form.role.value;
+    
     const password = form.password.value;
-    console.log(email, role, password)
+    if(newAccount){
+      const role = form.role.value;
+      console.log(email, role, password);
+    }else{
+      console.log(email, password)
+    }
+    
   }
 
   return (
