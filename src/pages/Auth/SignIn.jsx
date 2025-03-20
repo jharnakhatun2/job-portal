@@ -1,35 +1,91 @@
-import React, { useRef, useState } from "react"
+import React, { useState } from "react";
 import { Link } from "react-router";
 
-const SignIn = ({setIsModalOpen}) => {
+const SignIn = ({ setIsModalOpen }) => {
   const [newAccount, setNewAccount] = useState(false);
+  const [errors, setErrors] = useState({});
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    role: "Role",
+  });
 
- 
-  //handle toggle form
+  // Handle input changes
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  // Handle toggle form
   const handleToggleForm = () => {
-    setNewAccount(pre => !pre)
-  }
+    setNewAccount((prev) => !prev);
+    // Clear errors when toggling forms
+    setErrors({});
+    // Reset form data
+    setFormData({ email: "", password: "", role: "Role" });
+  };
 
-  // handle form submit
+  // Validate form
+  const validateForm = () => {
+    const newErrors = {};
+
+    // Email validation
+    if (!formData.email) {
+      newErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = "Email is invalid";
+    }
+
+    // Password validation
+    if (!formData.password) {
+      newErrors.password = "Password is required";
+    } else if (formData.password.length < 6) {
+      newErrors.password = "Password must be at least 6 characters";
+    }
+
+    // Role validation (only for registration)
+    if (newAccount && formData.role === "Role") {
+      newErrors.role = "Please select a role";
+    }
+
+    setErrors(newErrors);
+    // Return true if no errors
+    return Object.keys(newErrors).length === 0;
+  };
+
+  // Handle form submit
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    const form = e.target;
-    const email = form.email.value;
-    
-    const password = form.password.value;
-    if(newAccount){
-      const role = form.role.value;
-      console.log(email, role, password);
-    }else{
-      console.log(email, password)
+
+    if (validateForm()) {
+      if (newAccount) {
+        // Registration logic
+        console.log("Registration Data:", {
+          email: formData.email,
+          password: formData.password,
+          role: formData.role,
+        });
+      } else {
+        // Login logic (no role needed)
+        console.log("Login Data:", {
+          email: formData.email,
+          password: formData.password,
+        });
+      }
+      // Close modal on successful submission
+      setIsModalOpen(false);
     }
-    
-  }
+  };
 
   return (
     <div className="w-full mx-auto px-3">
       <h1 className="text-3xl"></h1>
-      <h2 className="text-sm lg:text-lg font-bold text-center uppercase">{newAccount ? 'Create an account' : 'User Login'}</h2>
+      <h2 className="text-sm lg:text-lg font-bold text-center uppercase">
+        {newAccount ? "Create an account" : "User Login"}
+      </h2>
       <form onSubmit={handleFormSubmit}>
         {/* Email input field */}
         <div className="form-control">
@@ -51,14 +107,20 @@ const SignIn = ({setIsModalOpen}) => {
               name="email"
               className="grow"
               placeholder="email@example.com"
+              value={formData.email}
+              onChange={handleInputChange}
             />
           </label>
+          {errors.email && (
+            <span className="text-red-500 text-sm">{errors.email}</span>
+          )}
         </div>
-        {/* Role input field */}
-        {newAccount ? (
+
+        {/* Role input field (only for registration) */}
+        {newAccount && (
           <div className="form-control mt-4">
-          <label className="label">
-              <span className="label-text">Account For </span>
+            <label className="label">
+              <span className="label-text">Account For</span>
             </label>
             <label className="input input-bordered flex items-center gap-2 w-full">
               <svg
@@ -73,15 +135,25 @@ const SignIn = ({setIsModalOpen}) => {
                   clipRule="evenodd"
                 />
               </svg>
-              <select defaultValue="Role" name="role" className="select select-primary w-full focus:outline-none border-none bg-transparent">
-                <option disabled={true}>Role</option>
+              <select
+                name="role"
+                className="select select-primary w-full focus:outline-none border-none bg-transparent"
+                value={formData.role}
+                onChange={handleInputChange}
+              >
+                <option disabled value="Role">
+                  Role
+                </option>
                 <option value="Candidate">Candidate</option>
                 <option value="Employee">Employee</option>
               </select>
             </label>
-  
+            {errors.role && (
+              <span className="text-red-500 text-sm">{errors.role}</span>
+            )}
           </div>
-        ) : ""}
+        )}
+
         {/* Password input field */}
         <div className="form-control mt-4">
           <label className="label">
@@ -105,30 +177,57 @@ const SignIn = ({setIsModalOpen}) => {
               name="password"
               className="grow"
               placeholder="Enter password"
+              value={formData.password}
+              onChange={handleInputChange}
             />
           </label>
-          {/* forget password */}
-          {newAccount ? "" : (
-            <label className="label" >
+          {errors.password && (
+            <span className="text-red-500 text-sm">{errors.password}</span>
+          )}
+          {/* Forget password (only for login) */}
+          {!newAccount && (
+            <label className="label">
               <Link to="/forgot-pass" className="label-text-alt link link-hover">
                 Forgot password?
               </Link>
             </label>
           )}
-
         </div>
-        {/* submit button */}
-        <div className="form-control mt-6" onClick={() => setIsModalOpen(false)}>
-          {newAccount ? (<button className="btn btn-primary w-full uppercase">Register</button>) : (<button className="btn btn-primary w-full uppercase">Login</button>)}
 
+        {/* Submit button */}
+        <div className="form-control mt-6">
+          <button type="submit" className="btn btn-primary w-full uppercase">
+            {newAccount ? "Register" : "Login"}
+          </button>
         </div>
       </form>
+
       <div className="divider">OR</div>
       <div className="text-center text-gray-500">
-        {newAccount ? <p>Already have an account? <button className="text-primary underline cursor-pointer" onClick={handleToggleForm}>Login</button></p> : <p>No account? <button className="text-primary underline cursor-pointer" onClick={handleToggleForm}>Create An Account</button></p>}
+        {newAccount ? (
+          <p>
+            Already have an account?{" "}
+            <button
+              className="text-primary underline cursor-pointer"
+              onClick={handleToggleForm}
+            >
+              Login
+            </button>
+          </p>
+        ) : (
+          <p>
+            No account?{" "}
+            <button
+              className="text-primary underline cursor-pointer"
+              onClick={handleToggleForm}
+            >
+              Create An Account
+            </button>
+          </p>
+        )}
       </div>
     </div>
-  )
+  );
 };
 
 export default SignIn;
