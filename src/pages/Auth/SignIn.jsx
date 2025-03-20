@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router";
+import { authApp } from "../../context/AuthProvider";
 
 const SignIn = ({ setIsModalOpen }) => {
   const [newAccount, setNewAccount] = useState(false);
@@ -9,6 +10,7 @@ const SignIn = ({ setIsModalOpen }) => {
     password: "",
     role: "Role",
   });
+  const { user, loading, createUser, logIn } = authApp();
 
   // Handle input changes
   const handleInputChange = (e) => {
@@ -59,21 +61,19 @@ const SignIn = ({ setIsModalOpen }) => {
   // Handle form submit
   const handleFormSubmit = (e) => {
     e.preventDefault();
-
+    const email = formData.email;
+    const password = formData.password;
     if (validateForm()) {
       if (newAccount) {
         // Registration logic
-        console.log("Registration Data:", {
-          email: formData.email,
-          password: formData.password,
-          role: formData.role,
-        });
+        const role = formData.role;
+        //create firebase user
+        createUser(email, password)
+          .then((userCredential) => console.log(userCredential.user))
+          .catch((error) => console.error(error));
       } else {
         // Login logic (no role needed)
-        console.log("Login Data:", {
-          email: formData.email,
-          password: formData.password,
-        });
+
       }
       // Close modal on successful submission
       setIsModalOpen(false);
