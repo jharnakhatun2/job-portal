@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router";
 import { authApp } from "../../context/AuthProvider";
+import Loader from "../../util/Loader/Loader";
 
 const SignIn = ({ setIsModalOpen }) => {
   const [newAccount, setNewAccount] = useState(false);
@@ -73,12 +74,18 @@ const SignIn = ({ setIsModalOpen }) => {
           .catch((error) => console.error(error));
       } else {
         // Login logic (no role needed)
-
+        logIn(email, password)
+          .then((userCredential) => console.log(userCredential.user))
+          .catch((error) => console.error(error));
       }
       // Close modal on successful submission
       setIsModalOpen(false);
     }
   };
+
+  if(loading){
+    return <Loader/>
+}
 
   return (
     <div className="w-full mx-auto px-3">

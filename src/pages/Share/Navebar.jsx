@@ -1,9 +1,13 @@
 import React, { useState } from "react"
-import Modal from "../../Auth/Modal";
+import Modal from "../Auth/Modal";
 import { Link } from "react-router";
+import { authApp } from "../../context/AuthProvider";
+import Loader from "../../util/Loader/Loader";
 
 const Navbar = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const {user,logOut,loading} = authApp();
+
     const menuList = <>
         <li><a>Item 1</a></li>
         <li>
@@ -17,6 +21,11 @@ const Navbar = () => {
         </li>
         <li><a>Item 3</a></li>
     </>
+
+    if(loading){
+        return <Loader/>
+    }
+    
     return (
         <>
             {/* SignIn form Modal */}
@@ -32,7 +41,8 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className="navbar-end gap-2">
-                        <button className="btn btn-primary btn-sm lg:btn-md" onClick={() => setIsModalOpen(true)}>Sign In</button>
+                        {user ? (<button className="btn btn-primary btn-sm lg:btn-md" onClick={() => logOut()}>Logout</button>):(<button className="btn btn-primary btn-sm lg:btn-md" onClick={() => setIsModalOpen(true)}>Sign In</button>)}
+                        
                         {/* menu for small device */}
                         <div className="dropdown">
                             {/* menu icon for small device */}
