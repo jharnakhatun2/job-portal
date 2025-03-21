@@ -68,9 +68,13 @@ const SignIn = ({ setIsModalOpen }) => {
       if (newAccount) {
         // Registration logic
         const role = formData.role;
+        const userInfo = {email,role,password};
         //create firebase user
         createUser(email, password)
-          .then((userCredential) => console.log(userCredential.user))
+          .then((userCredential) => {
+            console.log(userCredential.user)
+            
+          })
           .catch((error) => console.error(error));
       } else {
         // Login logic (no role needed)
