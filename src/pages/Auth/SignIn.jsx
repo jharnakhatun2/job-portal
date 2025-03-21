@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router";
 import { authApp } from "../../context/AuthProvider";
 import Loader from "../../util/Loader/Loader";
+import axios from "axios";
+import Swal from "sweetalert2";
+import 'animate.css';
 
 const SignIn = ({ setIsModalOpen }) => {
   const [newAccount, setNewAccount] = useState(false);
@@ -11,7 +14,7 @@ const SignIn = ({ setIsModalOpen }) => {
     password: "",
     role: "Role",
   });
-  const { user, loading, createUser, logIn } = authApp();
+  const { user, loading,setLoading, createUser, logIn } = authApp();
 
   // Handle input changes
   const handleInputChange = (e) => {
@@ -68,14 +71,46 @@ const SignIn = ({ setIsModalOpen }) => {
       if (newAccount) {
         // Registration logic
         const role = formData.role;
-        const userInfo = {email,role,password};
+        const userInfo = {email,role};
         //create firebase user
         createUser(email, password)
           .then((userCredential) => {
             console.log(userCredential.user)
-            
+            axios.post('http://localhost:5000/users', userInfo )
+            .then( data => {
+              console.log(data.data)
+              if(data.data.acknowledged){
+                Swal.fire({
+                  title: "Registration Successful!",
+                  icon: "success",
+                  showClass: {
+                    popup: `
+                      animate__animated
+                      animate__fadeInUp
+                      animate__faster
+                    `
+                  },
+                  hideClass: {
+                    popup: `
+                      animate__animated
+                      animate__fadeOutDown
+                      animate__faster
+                    `
+                  }
+                });
+              }
+            } )
           })
-          .catch((error) => console.error(error));
+          .catch((error) => {
+            const message = error.message;
+            console.error(error)
+            Swal.fire({
+              icon: "error",
+              title: "Oops...",
+              text: message,
+            });
+            setLoading(false);
+          });
       } else {
         // Login logic (no role needed)
         logIn(email, password)
