@@ -20,20 +20,22 @@ const Footer = () => {
                             </div>
                         </fieldset>
                     </form>
+                    <div className=" footer-horizontal gap-32">
                     <nav>
-                        <h6 className="footer-title text-white">Company</h6>
-                        <a className="link link-hover"><MdKeyboardArrowRight /> About us</a>
-                        <a className="link link-hover">Contact</a>
-                        <a className="link link-hover">Jobs</a>
-                        <a className="link link-hover">Press kit</a>
+                        <h6 className="footer-title text-white pl-1">Company</h6>
+                        <a className="link link-hover flex items-center"><MdKeyboardArrowRight /> About us</a>
+                        <a className="link link-hover  flex items-center"><MdKeyboardArrowRight /> Contact</a>
+                        <a className="link link-hover  flex items-center"><MdKeyboardArrowRight /> Jobs</a>
+                        <a className="link link-hover  flex items-center"><MdKeyboardArrowRight /> Press kit</a>
                     </nav>
                     <nav>
-                        <h6 className="footer-title text-white">Legal</h6>
-                        <a className="link link-hover">Terms of use</a>
-                        <a className="link link-hover">Privacy policy</a>
-                        <a className="link link-hover">Cookie policy</a>
-                        <a className="link link-hover">How It Works</a>
+                        <h6 className="footer-title text-white pl-2">Legal</h6>
+                        <a className="link link-hover  flex items-center"><MdKeyboardArrowRight /> Terms of use</a>
+                        <a className="link link-hover  flex items-center"><MdKeyboardArrowRight /> Privacy policy</a>
+                        <a className="link link-hover  flex items-center"><MdKeyboardArrowRight /> Cookie policy</a>
+                        <a className="link link-hover  flex items-center"><MdKeyboardArrowRight /> How It Works</a>
                     </nav>
+                    </div >
                     <nav>
                         <h6 className="footer-title text-white">Contact Us</h6>
                         <div>
