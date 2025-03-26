@@ -4,8 +4,8 @@ import { BiSolidArrowToTop } from "react-icons/bi";
 
 const BottomFooter = () => {
     return (
-        <footer className="bg-neutral text-neutral-content items-center p-4">
-            <div className="footer sm:footer-horizontal max-w-7xl mx-auto">
+        <footer className="bg-neutral text-neutral-content items-center p-4 ">
+            <div className="footer sm:footer-horizontal max-w-7xl mx-auto justify-between">
 
                 <aside className="grid-flow-col items-center">
                 <Link to='/' className="text-lg lg:text-xl xl:text-2xl font-bold"><span className="text-primary ">J</span>O<span className="text-primary ">B</span> <span className="font-light">PORTAL</span></Link>
