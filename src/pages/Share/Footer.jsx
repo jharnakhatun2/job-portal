@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <>
             <footer className="bg-zinc-800 text-gray-500">
-                <div className="footer sm:footer-horizontal sm:max-w-7xl mx-auto w-full">
+                <div className="footer sm:footer-horizontal sm:max-w-7xl mx-auto w-full px-3 xl:px-0 py-8">
                     <form>
                         <h6 className="footer-title text-white">Newsletter</h6>
                         <p className="w-72">Subscribe to Job Portal newsletter to get the latest jobs posted, candidates ,and other latest news stay updated.</p>

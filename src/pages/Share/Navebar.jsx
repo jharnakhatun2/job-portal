@@ -30,7 +30,7 @@ const Navbar = () => {
         <>
             {/* SignIn form Modal */}
             <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
-            <div className="bg-base-100 shadow-sm">
+            <div className="bg-base-100 shadow-sm px-3 xl:px-0">
                 <div className="navbar sm:max-w-7xl mx-auto w-full p-0">
                     <div className="navbar-start cursor-pointer">
                         <Link to='/' className="text-lg lg:text-xl xl:text-2xl font-bold"><span className="text-primary ">J</span>O<span className="text-primary ">B</span> <span className="font-light">PORTAL</span></Link>
