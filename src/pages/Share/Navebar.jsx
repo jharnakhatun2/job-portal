@@ -31,7 +31,7 @@ const Navbar = () => {
             {/* SignIn form Modal */}
             <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
             <div className="bg-base-100 shadow-sm">
-                <div className="navbar  max-w-7xl mx-auto">
+                <div className="navbar sm:max-w-7xl mx-auto w-full p-0">
                     <div className="navbar-start cursor-pointer">
                         <Link to='/' className="text-lg lg:text-xl xl:text-2xl font-bold"><span className="text-primary ">J</span>O<span className="text-primary ">B</span> <span className="font-light">PORTAL</span></Link>
                     </div>
@@ -40,11 +40,11 @@ const Navbar = () => {
                             {menuList}
                         </ul>
                     </div>
-                    <div className="navbar-end gap-2">
+                    <div className="navbar-end">
                         {user ? (<button className="btn btn-primary btn-sm lg:btn-md" onClick={() => logOut()}>Logout</button>):(<button className="btn btn-primary btn-sm lg:btn-md" onClick={() => setIsModalOpen(true)}>Sign In</button>)}
                         
                         {/* menu for small device */}
-                        <div className="dropdown">
+                        <div className="dropdown ml-1">
                             {/* menu icon for small device */}
                             <div tabIndex={0} role="button" className="btn btn-primary btn-sm lg:hidden">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>

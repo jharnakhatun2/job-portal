@@ -5,12 +5,12 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 const Footer = () => {
     return (
         <>
-            <footer className="bg-zinc-800 text-gray-500 p-10 ">
-                <div className="footer sm:footer-horizontal max-w-7xl mx-auto">
+            <footer className="bg-zinc-800 text-gray-500">
+                <div className="footer sm:footer-horizontal sm:max-w-7xl mx-auto w-full">
                     <form>
                         <h6 className="footer-title text-white">Newsletter</h6>
                         <p className="w-72">Subscribe to Job Portal newsletter to get the latest jobs posted, candidates ,and other latest news stay updated.</p>
-                        <fieldset className="w-80">
+                        <fieldset className="w-full sm:w-80">
                             <div className="join">
                                 <input
                                     type="text"
@@ -20,16 +20,16 @@ const Footer = () => {
                             </div>
                         </fieldset>
                     </form>
-                    <div className=" footer-horizontal gap-32">
+                    <div className=" footer-horizontal sm:gap-32">
                     <nav>
-                        <h6 className="footer-title text-white pl-1">Company</h6>
+                        <h6 className="footer-title text-white ">Company</h6>
                         <a className="link link-hover flex items-center"><MdKeyboardArrowRight /> About us</a>
                         <a className="link link-hover  flex items-center"><MdKeyboardArrowRight /> Contact</a>
                         <a className="link link-hover  flex items-center"><MdKeyboardArrowRight /> Jobs</a>
                         <a className="link link-hover  flex items-center"><MdKeyboardArrowRight /> Press kit</a>
                     </nav>
                     <nav>
-                        <h6 className="footer-title text-white pl-2">Legal</h6>
+                        <h6 className="footer-title text-white ">Legal</h6>
                         <a className="link link-hover  flex items-center"><MdKeyboardArrowRight /> Terms of use</a>
                         <a className="link link-hover  flex items-center"><MdKeyboardArrowRight /> Privacy policy</a>
                         <a className="link link-hover  flex items-center"><MdKeyboardArrowRight /> Cookie policy</a>
@@ -81,7 +81,7 @@ const Footer = () => {
                     </nav>
                 </div>
             </footer>
-            <BottomFooter />
+           <BottomFooter/>
         </>
     )
 };
