@@ -20,7 +20,7 @@ const Footer = () => {
                             </div>
                         </fieldset>
                     </form>
-                    <div className=" footer-horizontal sm:gap-32">
+                    <div className=" footer-horizontal gap-15 sm:gap-5 lg:gap-24 xl:gap-32">
                     <nav>
                         <h6 className="footer-title text-white ">Company</h6>
                         <a className="link link-hover flex items-center"><MdKeyboardArrowRight /> About us</a>
