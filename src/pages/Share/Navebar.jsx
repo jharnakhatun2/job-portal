@@ -13,7 +13,7 @@ const Navbar = () => {
         <li>
             <details>
                 <summary>Parent</summary>
-                <ul className="p-2">
+                <ul className="p-2 w-40">
                     <li><a>Submenu 1</a></li>
                     <li><a>Submenu 2</a></li>
                 </ul>
@@ -36,7 +36,7 @@ const Navbar = () => {
                         <Link to='/' className="text-lg lg:text-xl xl:text-2xl font-bold"><span className="text-primary ">J</span>O<span className="text-primary ">B</span> <span className="font-light">PORTAL</span></Link>
                     </div>
                     <div className="navbar-center hidden lg:flex">
-                        <ul className="menu menu-horizontal px-1">
+                        <ul className="menu menu-horizontal px-1 ">
                             {menuList}
                         </ul>
                     </div>
