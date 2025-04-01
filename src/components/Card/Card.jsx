@@ -19,18 +19,20 @@ const Card = () => {
   return (
     <div>
       {jobData.map((data)=>(
-        <div key={data.id}>
+        <div key={data.id} className="space-y-3">
             <img src={data.logo} alt="company logo" className="border border-gray-200"/>
-            <div>
+            <div className="space-y-3">
                <h3 className="uppercase font-bold">{data.title}</h3> 
-               <p className="font-semibold">Posted <span className="ml-10">{data.posted}</span></p>
-               <p className="font-semibold">Specialism <span className="ml-10">{data.specialism}</span></p>
-               <p className="font-semibold">Location <span className="ml-10">{data.location}</span></p>
-               <p>{data.description}</p>
+               <div className="text-sm">
+               <p className="font-semibold">Posted <span className="ml-12">{data.posted}</span></p>
+               <p className="font-semibold">Specialism <span className="ml-6">{data.specialism}</span></p>
+               <p className="font-semibold">Location <span className="ml-9">{data.location}</span></p>
+               </div>
+               <p className="text-gray-600 text-sm">{data.description}</p>
             </div>
-            <div>
-                <p>{data.vacancy_type}</p>
-                <button>♡</button>
+            <div className="flex gap-3">
+                <p className="uppercase border px-2">{data.vacancy_type}</p>
+                <button className="px-2 bg-primary rounded text-white text-xl">♡</button>
             </div>
         </div>
       ))}
