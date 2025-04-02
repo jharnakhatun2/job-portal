@@ -5,6 +5,6 @@
     "posted" : "3 months ago",
     "specialism" : "Accountancy",
     "location" : "Dhaka, Bangladesh",
-    "vacancy_type" : "Freelance",
+    "vacancy_type" : ["Freelance", "Internship"],
     "description" : "SAF is looking for a wordpress & digital media admin to handle all the digital media account management, best of theblog writing and social media. The candidate will be responsible to manage the news articles in wordpress websites"
 }]
