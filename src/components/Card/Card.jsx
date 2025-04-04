@@ -24,16 +24,30 @@ const Card = () => {
           <div className="space-y-3">
             <h3 className="uppercase font-bold">{data.title}</h3>
             <div className="text-sm">
-              <p className="font-semibold">Posted <span className="ml-12">{data.posted}</span></p>
-              <p className="font-semibold">Specialism <span className="ml-6">{data.specialism}</span></p>
+              {/* job posted date */}
+              {
+                Array.isArray(data.date_posted) && (
+                  data.date_posted.map((post, index) => (
+                    <p key={index} className="font-semibold">Posted <span className="ml-12">{post}</span></p>
+                  ))
+                )
+              }
+              {/* Specialism */}
+              {
+                Array.isArray(data.specialism) && (
+                  data.specialism.map((specialism, index) => (
+                    <p key={index} className="font-semibold">Specialism <span className="ml-6">{specialism}</span></p>
+                  ))
+                )
+              }
+              
               <p className="font-semibold">Location <span className="ml-9">{data.location}</span></p>
             </div>
             <p className="text-gray-500 text-sm font-normal">{data.description.slice(0, 150)}{data.description.length > 150 && "..."} <span className="text-xs text-primary font-bold underline">Read More ➢</span></p>
           </div>
           <div className="flex gap-2 items-center">
-            {/* Check if vacancy_type is an array */}
+            {/*vacancy_type */}
             {Array.isArray(data.vacancy_type) ? (
-              // If array, map through each type
               data.vacancy_type.map((type, index) => (
                 <p
                   key={index}

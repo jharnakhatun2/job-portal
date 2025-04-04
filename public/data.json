@@ -1,10 +1,20 @@
-[{
-    "id" : "1",
-    "title" : "Budget Center Analyst Manger",
-    "logo" : "/logo/logo1.png",
-    "posted" : "3 months ago",
-    "specialism" : "Accountancy",
-    "location" : "Dhaka, Bangladesh",
-    "vacancy_type" : ["Freelance"],
-    "description" : "SAF is looking for a wordpress & digital media admin to handle all the digital media account management, best of theblog writing and social media. The candidate will be responsible to manage the news articles in wordpress websites"
-}]
+[
+  {
+    "id": "1",
+    "title": "Budget Center Analyst Manger",
+    "logo": "/logo/logo1.png",
+    "date_posted": ["Last Hour"],
+    "specialism": ["Accountancy"],
+    "location": "Dhaka, Bangladesh",
+    "vacancy_type": ["Freelance"],
+    "description": "SAF is looking for a wordpress & digital media admin to handle all the digital media account management, best of theblog writing and social media. The candidate will be responsible to manage the news articles in wordpress websites",
+    "offered_salary": ["0 - £15,000"],
+    "career_level": ["Manager"],
+    "experience": ["Fresh", "Less Than 1 Year"],
+    "gender": ["Male", "Female", "Both"],
+    "Industry": ["Development"],
+    "qualification": ["Certificate"]
+  }
+]
+
+
