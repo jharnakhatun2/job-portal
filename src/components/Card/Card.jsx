@@ -19,11 +19,11 @@ const Card = () => {
   return (
     <div>
       {jobData.map((data) => (
-        <div key={data.id} className="space-y-5 sm:flex gap-3 sm:items-start justify-between">
+        <div key={data.id} className="space-y-5 sm:flex gap-3 sm:gap-10 sm:items-start justify-between">
           <img src={data.logo} alt="company logo" className="border border-gray-200" />
           <div className="space-y-3">
             <h3 className="uppercase font-bold">{data.title}</h3>
-            <div className="text-sm">
+            <div className="text-[13px] space-y-1">
               {/* job posted date */}
               {
                 Array.isArray(data.date_posted) && (
@@ -43,7 +43,7 @@ const Card = () => {
               
               <p className="font-semibold">Location <span className="ml-9">{data.location}</span></p>
             </div>
-            <p className="text-gray-500 text-sm font-normal">{data.description.slice(0, 150)}{data.description.length > 150 && "..."} <span className="text-xs text-primary font-bold underline">Read More ➢</span></p>
+            <p className="text-gray-600 text-sm font-light font-roboto">{data.description.slice(0, 150)}{data.description.length > 150 && "..."} <span className="text-xs text-primary font-bold underline">Read More ➢</span></p>
           </div>
           <div className="flex gap-2 items-center">
             {/*vacancy_type */}
