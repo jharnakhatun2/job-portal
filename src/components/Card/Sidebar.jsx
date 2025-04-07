@@ -22,22 +22,22 @@ const Sidebar = () => {
             <div className="space-y-3 border border-gray-200 p-3 rounded">
                 <h1 className="text-sm tracking-wide font-bold text-zinc-600">DATE POSTED</h1>
                 <div className="text-[13px]">
-                    <label className="font-bold cursor-pointer">
+                    <label className="font-semibold cursor-pointer">
                         <input type="radio" name="radio-2" className="radio radio-xs mr-2 my-2" />Last Hour
                     </label><br />
-                    <label className="font-bold cursor-pointer">
+                    <label className="font-semibold cursor-pointer">
                         <input type="radio" name="radio-2" className="radio radio-xs mr-2 my-2" />Last 24 hours
                     </label><br />
-                    <label className="font-bold cursor-pointer">
+                    <label className="font-semibold cursor-pointer">
                         <input type="radio" name="radio-2" className="radio radio-xs mr-2 my-2" />Last 7 days
                     </label><br />
-                    <label className="font-bold cursor-pointer">
+                    <label className="font-semibold cursor-pointer">
                         <input type="radio" name="radio-2" className="radio radio-xs mr-2 my-2" />Last 14 days
                     </label><br />
-                    <label className="font-bold cursor-pointer">
+                    <label className="font-semibold cursor-pointer">
                         <input type="radio" name="radio-2" className="radio radio-xs mr-2 my-2" />Last 30 days
                     </label><br />
-                    <label className="text-[13px] font-bold cursor-pointer">
+                    <label className="text-[13px] font-semibold cursor-pointer">
                         <input type="radio" name="radio-2" className="radio radio-xs mr-2 my-2" defaultChecked/>All
                     </label><br />
                 </div>
@@ -48,49 +48,49 @@ const Sidebar = () => {
                 <div className="flex items-center gap-2 justify-between cursor-pointer ">
                     <div className="flex items-center gap-2">
                         <div className="w-3 h-3 bg-green-500"></div>
-                        <span className="text-[13px] font-bold">Freelance</span>
+                        <span className="text-[13px] font-semibold">Freelance</span>
                     </div>
                     <p>(0)</p>
                 </div>
                 <div className="flex items-center gap-2 justify-between cursor-pointer">
                     <div className="flex items-center gap-2">
                         <div className="w-3 h-3 bg-green-700"></div>
-                        <span className="text-[13px] font-bold">Full Time</span>
+                        <span className="text-[13px] font-semibold">Full Time</span>
                     </div>
                     <p>(0)</p>
                 </div>
                 <div className="flex items-center gap-2 justify-between cursor-pointer">
                     <div className="flex items-center gap-2">
                         <div className="w-3 h-3 bg-red-500"></div>
-                        <span className="text-[13px] font-bold">Internship</span>
+                        <span className="text-[13px] font-semibold">Internship</span>
                     </div>
                     <p>(0)</p>
                 </div>
                 <div className="flex items-center gap-2 justify-between cursor-pointer">
                     <div className="flex items-center gap-2">
                         <div className="w-3 h-3 bg-red-700"></div>
-                        <span className="text-[13px] font-bold">Part Time</span>
+                        <span className="text-[13px] font-semibold">Part Time</span>
                     </div>
                     <p>(0)</p>
                 </div>
                 <div className="flex items-center gap-2 justify-between cursor-pointer">
                     <div className="flex items-center gap-2">
                         <div className="w-3 h-3 bg-violet-500"></div>
-                        <span className="text-[13px] font-bold">Remote</span>
+                        <span className="text-[13px] font-semibold">Remote</span>
                     </div>
                     <p>(0)</p>
                 </div>
                 <div className="flex items-center gap-2 justify-between cursor-pointer">
                     <div className="flex items-center gap-2">
                         <div className="w-3 h-3 bg-violet-700"></div>
-                        <span className="text-[13px] font-bold">Temporary</span>
+                        <span className="text-[13px] font-semibold">Temporary</span>
                     </div>
                     <p>(0)</p>
                 </div>
                 <div className="flex items-center gap-2 justify-between cursor-pointer">
                     <div className="flex items-center gap-2">
                         <div className="w-3 h-3 bg-blue-800"></div>
-                        <span className="text-[13px] font-bold">Volunteer</span>
+                        <span className="text-[13px] font-semibold">Volunteer</span>
                     </div>
                     <p>(0)</p>
                 </div>
@@ -101,56 +101,56 @@ const Sidebar = () => {
                 <div className="flex items-center gap-2 justify-between cursor-pointer ">
                     <label className="fieldset-label">
                         <input type="checkbox" defaultChecked />
-                        <span className="text-[13px] font-bold">Accountancy</span>
+                        <span className="text-[13px] font-semibold">Accountancy</span>
                     </label>
                     <p>(0)</p>
                 </div>
                 <div className="flex items-center gap-2 justify-between cursor-pointer">
                     <label className="fieldset-label">
                         <input type="checkbox" />
-                        <span className="text-[13px] font-bold">Banking</span>
+                        <span className="text-[13px] font-semibold">Banking</span>
                     </label>
                     <p>(0)</p>
                 </div>
                 <div className="flex items-center gap-2 justify-between cursor-pointer">
                     <label className="fieldset-label">
                         <input type="checkbox" />
-                        <span className="text-[13px] font-bold">Charity & Voluntary</span>
+                        <span className="text-[13px] font-semibold">Charity & Voluntary</span>
                     </label>
                     <p>(0)</p>
                 </div>
                 <div className="flex items-center gap-2 justify-between cursor-pointer">
                     <label className="fieldset-label">
                         <input type="checkbox" />
-                        <span className="text-[13px] font-bold">Digital & Creative</span>
+                        <span className="text-[13px] font-semibold">Digital & Creative</span>
                     </label>
                     <p>(0)</p>
                 </div>
                 <div className="flex items-center gap-2 justify-between cursor-pointer">
                     <label className="fieldset-label">
                         <input type="checkbox" />
-                        <span className="text-[13px] font-bold">Estate Agency</span>
+                        <span className="text-[13px] font-semibold">Estate Agency</span>
                     </label>
                     <p>(0)</p>
                 </div>
                 <div className="flex items-center gap-2 justify-between cursor-pointer">
                     <label className="fieldset-label">
                         <input type="checkbox" />
-                        <span className="text-[13px] font-bold">Graduate</span>
+                        <span className="text-[13px] font-semibold">Graduate</span>
                     </label>
                     <p>(0)</p>
                 </div>
                 <div className="flex items-center gap-2 justify-between cursor-pointer">
                     <label className="fieldset-label">
                         <input type="checkbox" />
-                        <span className="text-[13px] font-bold">IT Contractor</span>
+                        <span className="text-[13px] font-semibold">IT Contractor</span>
                     </label>
                     <p>(0)</p>
                 </div>
                 <div className="flex items-center gap-2 justify-between cursor-pointer">
                     <label className="fieldset-label">
                         <input type="checkbox" />
-                        <span className="text-[13px] font-bold">More</span>
+                        <span className="text-[13px] font-semibold">More</span>
                     </label>
                 </div>
             </div>

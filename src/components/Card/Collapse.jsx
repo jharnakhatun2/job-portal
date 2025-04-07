@@ -191,7 +191,7 @@ const Collapse = () => {
         <div className="w-full border border-gray-200 rounded bg-white">
             {/* Expand/Collapse All Button */}
             <div
-                className="flex justify-between items-center px-4 py-2 bg-gray-400 text-white font-semibold cursor-pointer text-[13px] rounded-t"
+                className="flex justify-between items-center px-4 py-2 bg-gray-400 text-white cursor-pointer text-[13px] rounded-t"
                 onClick={toggleAll}
             >
                 <span>
@@ -226,7 +226,7 @@ const Collapse = () => {
 
                     {/* Content */}
                     <div
-                        className={`overflow-hidden transition-all duration-500 ease-in-out px-4 ${openStates[index] ? "max-h-40 py-2" : "max-h-0 py-0"
+                        className={`overflow-hidden transition-all duration-500 ease-in-out px-4 ${openStates[index] ? "max-h-60 py-2" : "max-h-0 py-0"
                             }`}
                     >
                         {
@@ -234,7 +234,7 @@ const Collapse = () => {
                                 <div className="flex items-center gap-2 justify-between cursor-pointer ">
                                     <label className="fieldset-label">
                                         <input type="checkbox" />
-                                        <span className="text-[13px] font-bold">{option.sub_name}</span>
+                                        <span className="text-[13px] font-semibold">{option.sub_name}</span>
                                     </label>
                                     <p>({option.total})</p>
                                 </div>
