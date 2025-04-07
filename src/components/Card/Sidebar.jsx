@@ -1,9 +1,10 @@
 import React from "react"
+import Collapse from "./Collapse";
 
-
+  
 const Sidebar = () => {
     return (
-        <div className="space-y-2">
+        <div className="space-y-2 text-zinc-500">
             {/* Search Bar */}
             <div>
                 <label className="input border border-gray-200 w-full">
@@ -19,35 +20,31 @@ const Sidebar = () => {
             </div>
             {/* Date Post */}
             <div className="space-y-3 border border-gray-200 p-3 rounded">
-                <h1 className="text-sm tracking-wide font-bold">DATE POSTED</h1>
-                <div className="flex items-center gap-2">
-                    <input type="radio" id="last-hour" name="radio-2" className="radio radio-xs" />
-                    <label htmlFor="last-hour" className="text-xs font-bold cursor-pointer">Last Hour</label>
-                </div>
-                <div className="flex items-center gap-2">
-                    <input type="radio" id="24-hour" name="radio-2" className="radio radio-xs" />
-                    <label htmlFor="24-hour" className="text-xs font-bold cursor-pointer">Last 24 hours</label>
-                </div>
-                <div className="flex items-center gap-2">
-                    <input type="radio" id="7-days" name="radio-2" className="radio radio-xs" />
-                    <label htmlFor="7-days" className="text-xs font-bold cursor-pointer">Last 7 days</label>
-                </div>
-                <div className="flex items-center gap-2">
-                    <input type="radio" id="14-days" name="radio-2" className="radio radio-xs" />
-                    <label htmlFor="14-days" className="text-xs font-bold cursor-pointer">Last 14 days</label>
-                </div>
-                <div className="flex items-center gap-2">
-                    <input type="radio" id="30-days" name="radio-2" className="radio radio-xs" />
-                    <label htmlFor="30-days" className="text-xs font-bold cursor-pointer">Last 30 days</label>
-                </div>
-                <div className="flex items-center gap-2">
-                    <input type="radio" id="all" name="radio-2" className="radio radio-xs" defaultChecked />
-                    <label htmlFor="all" className="text-xs font-bold cursor-pointer">All</label>
+                <h1 className="text-sm tracking-wide font-bold text-zinc-600">DATE POSTED</h1>
+                <div className="text-[13px]">
+                    <label className="font-bold cursor-pointer">
+                        <input type="radio" name="radio-2" className="radio radio-xs mr-2 my-2" />Last Hour
+                    </label><br />
+                    <label className="font-bold cursor-pointer">
+                        <input type="radio" name="radio-2" className="radio radio-xs mr-2 my-2" />Last 24 hours
+                    </label><br />
+                    <label className="font-bold cursor-pointer">
+                        <input type="radio" name="radio-2" className="radio radio-xs mr-2 my-2" />Last 7 days
+                    </label><br />
+                    <label className="font-bold cursor-pointer">
+                        <input type="radio" name="radio-2" className="radio radio-xs mr-2 my-2" />Last 14 days
+                    </label><br />
+                    <label className="font-bold cursor-pointer">
+                        <input type="radio" name="radio-2" className="radio radio-xs mr-2 my-2" />Last 30 days
+                    </label><br />
+                    <label className="text-[13px] font-bold cursor-pointer">
+                        <input type="radio" name="radio-2" className="radio radio-xs mr-2 my-2" defaultChecked/>All
+                    </label><br />
                 </div>
             </div>
             {/* Vacancy Type */}
             <div className="space-y-3 border border-gray-200 p-3 rounded">
-                <h1 className="text-sm tracking-wide font-bold uppercase">Vacancy Type</h1>
+                <h1 className="text-sm tracking-wide font-bold uppercase text-zinc-600">Vacancy Type</h1>
                 <div className="flex items-center gap-2 justify-between cursor-pointer ">
                     <div className="flex items-center gap-2">
                         <div className="w-3 h-3 bg-green-500"></div>
@@ -100,63 +97,65 @@ const Sidebar = () => {
             </div>
             {/* Specialisms */}
             <div className="space-y-3 border border-gray-200 p-3 rounded">
-                <h1 className="text-sm tracking-wide font-bold uppercase">Specialisms</h1>
+                <h1 className="text-sm tracking-wide font-bold uppercase text-zinc-600">Specialisms</h1>
                 <div className="flex items-center gap-2 justify-between cursor-pointer ">
                     <label className="fieldset-label">
-                        <input type="checkbox" defaultChecked/>
+                        <input type="checkbox" defaultChecked />
                         <span className="text-[13px] font-bold">Accountancy</span>
                     </label>
                     <p>(0)</p>
                 </div>
                 <div className="flex items-center gap-2 justify-between cursor-pointer">
-                <label className="fieldset-label">
+                    <label className="fieldset-label">
                         <input type="checkbox" />
                         <span className="text-[13px] font-bold">Banking</span>
                     </label>
                     <p>(0)</p>
                 </div>
                 <div className="flex items-center gap-2 justify-between cursor-pointer">
-                <label className="fieldset-label">
+                    <label className="fieldset-label">
                         <input type="checkbox" />
                         <span className="text-[13px] font-bold">Charity & Voluntary</span>
                     </label>
                     <p>(0)</p>
                 </div>
                 <div className="flex items-center gap-2 justify-between cursor-pointer">
-                <label className="fieldset-label">
+                    <label className="fieldset-label">
                         <input type="checkbox" />
                         <span className="text-[13px] font-bold">Digital & Creative</span>
                     </label>
                     <p>(0)</p>
                 </div>
                 <div className="flex items-center gap-2 justify-between cursor-pointer">
-                <label className="fieldset-label">
+                    <label className="fieldset-label">
                         <input type="checkbox" />
                         <span className="text-[13px] font-bold">Estate Agency</span>
                     </label>
                     <p>(0)</p>
                 </div>
                 <div className="flex items-center gap-2 justify-between cursor-pointer">
-                <label className="fieldset-label">
+                    <label className="fieldset-label">
                         <input type="checkbox" />
                         <span className="text-[13px] font-bold">Graduate</span>
                     </label>
                     <p>(0)</p>
                 </div>
                 <div className="flex items-center gap-2 justify-between cursor-pointer">
-                <label className="fieldset-label">
+                    <label className="fieldset-label">
                         <input type="checkbox" />
                         <span className="text-[13px] font-bold">IT Contractor</span>
                     </label>
                     <p>(0)</p>
                 </div>
                 <div className="flex items-center gap-2 justify-between cursor-pointer">
-                <label className="fieldset-label">
+                    <label className="fieldset-label">
                         <input type="checkbox" />
                         <span className="text-[13px] font-bold">More</span>
                     </label>
                 </div>
             </div>
+            {/* Group collapse */}
+            <Collapse/>
         </div>
     )
 };
