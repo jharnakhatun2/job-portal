@@ -1,5 +1,6 @@
 import React from "react"
 
+
 const Sidebar = () => {
     return (
         <div className="space-y-2">
@@ -20,28 +21,81 @@ const Sidebar = () => {
             <div className="space-y-3 border border-gray-200 p-3 rounded">
                 <h1 className="text-sm tracking-wide font-bold">DATE POSTED</h1>
                 <div className="flex items-center gap-2">
-                    <input type="radio" name="radio-2" className="radio radio-xs" defaultChecked />
-                    <span className="text-xs font-bold">Last Hour</span>
+                    <input type="radio" id="last-hour" name="radio-2" className="radio radio-xs" defaultChecked />
+                    <label htmlFor="last-hour" className="text-xs font-bold cursor-pointer">Last Hour</label>
                 </div>
                 <div className="flex items-center gap-2">
-                    <input type="radio" name="radio-2" className="radio radio-xs" defaultChecked />
-                    <span className="text-xs font-bold">Last 24 hours</span>
+                    <input type="radio" id="24-hour" name="radio-2" className="radio radio-xs" defaultChecked />
+                    <label htmlFor="24-hour" className="text-xs font-bold cursor-pointer">Last 24 hours</label>
                 </div>
                 <div className="flex items-center gap-2">
-                    <input type="radio" name="radio-2" className="radio radio-xs" defaultChecked />
-                    <span className="text-xs font-bold">Last 7 days</span>
+                    <input type="radio" id="7-days" name="radio-2" className="radio radio-xs" defaultChecked />
+                    <label htmlFor="7-days" className="text-xs font-bold cursor-pointer">Last 7 days</label>
                 </div>
                 <div className="flex items-center gap-2">
-                    <input type="radio" name="radio-2" className="radio radio-xs" defaultChecked />
-                    <span className="text-xs font-bold">Last 14 days</span>
+                    <input type="radio" id="14-days" name="radio-2" className="radio radio-xs" defaultChecked />
+                    <label htmlFor="14-days" className="text-xs font-bold cursor-pointer">Last 14 days</label>
                 </div>
                 <div className="flex items-center gap-2">
-                    <input type="radio" name="radio-2" className="radio radio-xs" defaultChecked />
-                    <span className="text-xs font-bold">Last 30 days</span>
+                    <input type="radio" id="30-days" name="radio-2" className="radio radio-xs" defaultChecked />
+                    <label htmlFor="30-days" className="text-xs font-bold cursor-pointer">Last 30 days</label>
                 </div>
                 <div className="flex items-center gap-2">
-                    <input type="radio" name="radio-2" className="radio radio-xs" defaultChecked />
-                    <span className="text-xs font-bold">All</span>
+                    <input type="radio" id="all" name="radio-2" className="radio radio-xs" defaultChecked />
+                    <label htmlFor="all" className="text-xs font-bold cursor-pointer">All</label>
+                </div>
+            </div>
+             {/* Vacancy Type */}
+             <div className="space-y-3 border border-gray-200 p-3 rounded">
+                <h1 className="text-sm tracking-wide font-bold uppercase">Vacancy Type</h1>
+                <div className="flex items-center gap-2 justify-between cursor-pointer ">
+                    <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 bg-green-500"></div>
+                    <span className="text-[13px] font-bold">Freelance</span>
+                    </div>
+                    <p>(0)</p>
+                </div>
+                <div className="flex items-center gap-2 justify-between cursor-pointer">
+                    <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 bg-green-700"></div>
+                    <span className="text-[13px] font-bold">Full Time</span>
+                    </div>
+                    <p>(0)</p>
+                </div>
+                <div className="flex items-center gap-2 justify-between cursor-pointer">
+                    <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 bg-red-500"></div>
+                    <span className="text-[13px] font-bold">Internship</span>
+                    </div>
+                    <p>(0)</p>
+                </div>
+                <div className="flex items-center gap-2 justify-between cursor-pointer">
+                    <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 bg-red-700"></div>
+                    <span className="text-[13px] font-bold">Part Time</span>
+                    </div>
+                    <p>(0)</p>
+                </div>
+                <div className="flex items-center gap-2 justify-between cursor-pointer">
+                    <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 bg-violet-500"></div>
+                    <span className="text-[13px] font-bold">Remote</span>
+                    </div>
+                    <p>(0)</p>
+                </div>
+                <div className="flex items-center gap-2 justify-between cursor-pointer">
+                    <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 bg-violet-700"></div>
+                    <span className="text-[13px] font-bold">Temporary</span>
+                    </div>
+                    <p>(0)</p>
+                </div>
+                <div className="flex items-center gap-2 justify-between cursor-pointer">
+                    <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 bg-blue-800"></div>
+                    <span className="text-[13px] font-bold">Volunteer</span>
+                    </div>
+                    <p>(0)</p>
                 </div>
             </div>
         </div>
