@@ -1,5 +1,40 @@
 import React, { useState, useEffect, useRef } from 'react';
 
+const slides = [
+  {
+    id: 1,
+    image: 'https://i.ibb.co.com/SrsmzJg/real-estate-agent-with-house-model-keys.jpg',
+    author: 'LUNDEV',
+    title: 'DESIGN SLIDER',
+    topic: 'ANIMAL',
+    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.'
+  },
+  {
+    id: 2,
+    image: 'https://i.ibb.co.com/wyXjnHJ/newsletter.png',
+    author: 'LUNDEV',
+    title: 'DESIGN SLIDER',
+    topic: 'ANIMAL',
+    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.'
+  },
+  {
+    id: 3,
+    image: 'https://i.ibb.co.com/zr56VDd/headphones-mouse-orange-background.jpg',
+    author: 'LUNDEV',
+    title: 'DESIGN SLIDER',
+    topic: 'ANIMAL',
+    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.'
+  },
+  {
+    id: 4,
+    image: 'https://i.ibb.co.com/DWNL7fh/contactimage.jpg',
+    author: 'LUNDEV',
+    title: 'DESIGN SLIDER',
+    topic: 'ANIMAL',
+    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.'
+  }
+];
+
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -7,40 +42,7 @@ const Carousel = () => {
   const thumbnailTimerRef = useRef(null);  // Ref for thumbnail auto scroll
   const progressRef = useRef(null);
   
-  const slides = [
-    {
-      id: 1,
-      image: 'https://i.ibb.co.com/SrsmzJg/real-estate-agent-with-house-model-keys.jpg',
-      author: 'LUNDEV',
-      title: 'DESIGN SLIDER',
-      topic: 'ANIMAL',
-      description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.'
-    },
-    {
-      id: 2,
-      image: 'https://i.ibb.co.com/wyXjnHJ/newsletter.png',
-      author: 'LUNDEV',
-      title: 'DESIGN SLIDER',
-      topic: 'ANIMAL',
-      description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.'
-    },
-    {
-      id: 3,
-      image: 'https://i.ibb.co.com/zr56VDd/headphones-mouse-orange-background.jpg',
-      author: 'LUNDEV',
-      title: 'DESIGN SLIDER',
-      topic: 'ANIMAL',
-      description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.'
-    },
-    {
-      id: 4,
-      image: 'https://i.ibb.co.com/DWNL7fh/contactimage.jpg',
-      author: 'LUNDEV',
-      title: 'DESIGN SLIDER',
-      topic: 'ANIMAL',
-      description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.'
-    }
-  ];
+  
 
   // Animation timing
   const ANIMATION_DURATION = 3000;
@@ -152,7 +154,7 @@ const Carousel = () => {
 
         {/* Thumbnails */}
         <div className="absolute bottom-[50px] left-[45%] transform translate-x-0 z-50 flex gap-5">
-          {slides.map((slide, index) => (
+          {items.map((slide, index) => (
             <div
               key={slide.id}
               onClick={() => goToSlide(index)}
