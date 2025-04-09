@@ -165,7 +165,7 @@ const Carousel = () => {
   `}
               />
 
-              <div className="content absolute top-[20%] left-[50%] transform translate-x-[-50%] w-full sm:w-7xl pr-[30%]">
+              <div className="content absolute top-[20%] left-[50%] transform translate-x-[-50%] w-full sm:w-7xl sm:pr-[30%] px-3 sm:px-0">
                 <div className={`author font-bold tracking-[10px] mb-4 transition-all duration-500 ${index === currentIndex ? 'translate-y-0 opacity-100 blur-none' : 'translate-y-12 opacity-0 blur-sm'}`}>
                   {slide.author}
                 </div>
