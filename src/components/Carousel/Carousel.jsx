@@ -192,26 +192,31 @@ const Carousel = () => {
         </div>
 
         {/* Thumbnails */}
-        <div className="thumbnail  absolute bottom-[50px] right-3 sm:right-10 w-max z-50 flex gap-[20px]">
-          {thumbnailItems.map((item) => (
-            <div
-              key={item.id}
-              onClick={() => handleThumbnailClick(item.id)}
-              className={`item w-[150px] h-[220px] rounded-xl overflow-hidden cursor-pointer transition-all flex-shrink-0  ${item.id === slides[currentIndex].id ? 'ring-2 ring-[#f1683a] scale-110' : 'opacity-70 hover:opacity-90'
-                }`}
-            >
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full h-full object-cover"
-              />
-              {/* <div className="content absolute bottom-2 left-2 text-white">
-                <div className="title text-sm font-medium">Name Slider</div>
-                <div className="description text-xs">Description</div>
-              </div> */}
-            </div>
-          ))}
+        <div className="thumbnail absolute bottom-[50px] right-3 sm:right-10 w-max z-50 flex gap-[20px]">
+          {thumbnailItems.map((item) => {
+            const isActive = item.id === slides[currentIndex].id;
+
+            return (
+              <div
+                key={item.id}
+                onClick={() => handleThumbnailClick(item.id)}
+                // Hide all non-active thumbnails on small devices
+                className={`
+          item w-[150px] h-[220px] rounded-xl overflow-hidden cursor-pointer transition-all flex-shrink-0
+          ${isActive ? 'ring-2 ring-[#f1683a] scale-110' : 'opacity-70 hover:opacity-90'}
+          ${isActive ? 'block' : 'hidden'} sm:block
+        `}
+              >
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            );
+          })}
         </div>
+
 
         {/* Navigation Arrows */}
         <div className="arrows absolute top-[80%] right-[52%] z-50 w-[300px] max-w-[30%] flex gap-2">
