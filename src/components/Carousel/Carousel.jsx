@@ -165,7 +165,7 @@ const Carousel = () => {
   `}
               />
 
-              <div className="content absolute top-[20%] left-[50%] transform translate-x-[-50%] w-[1140px] max-w-[80%] pr-[30%]">
+              <div className="content absolute top-[20%] left-[50%] transform translate-x-[-50%] w-full sm:w-7xl pr-[30%]">
                 <div className={`author font-bold tracking-[10px] mb-4 transition-all duration-500 ${index === currentIndex ? 'translate-y-0 opacity-100 blur-none' : 'translate-y-12 opacity-0 blur-sm'}`}>
                   {slide.author}
                 </div>
@@ -175,7 +175,7 @@ const Carousel = () => {
                 <div className={`topic text-5xl font-bold leading-tight text-[#f1683a] mb-6 transition-all duration-500 ${index === currentIndex ? 'translate-y-0 opacity-100 blur-none' : 'translate-y-12 opacity-0 blur-sm'}`} style={{ transitionDelay: '0.4s' }}>
                   {slide.topic}
                 </div>
-                <div className={`des w-4/5 text-sm leading-relaxed mb-8 transition-all duration-500 ${index === currentIndex ? 'translate-y-0 opacity-100 blur-none' : 'translate-y-12 opacity-0 blur-sm'}`} style={{ transitionDelay: '0.6s' }}>
+                <div className={`des w-full sm:w-4/6 text-sm leading-relaxed mb-8 transition-all duration-500 ${index === currentIndex ? 'translate-y-0 opacity-100 blur-none' : 'translate-y-12 opacity-0 blur-sm'}`} style={{ transitionDelay: '0.6s' }}>
                   {slide.description}
                 </div>
                 <div className={`buttons flex gap-2 transition-all duration-500 ${index === currentIndex ? 'translate-y-0 opacity-100 blur-none' : 'translate-y-12 opacity-0 blur-sm'}`} style={{ transitionDelay: '0.8s' }}>
