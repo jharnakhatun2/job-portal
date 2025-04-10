@@ -169,10 +169,10 @@ const Carousel = () => {
                 <div className={`author font-bold tracking-[10px] mb-4 transition-all duration-500 ${index === currentIndex ? 'translate-y-0 opacity-100 blur-none' : 'translate-y-12 opacity-0 blur-sm'}`}>
                   {slide.author}
                 </div>
-                <div className={`title text-5xl font-bold leading-tight mb-2 transition-all duration-500 ${index === currentIndex ? 'translate-y-0 opacity-100 blur-none' : 'translate-y-12 opacity-0 blur-sm'}`} style={{ transitionDelay: '0.2s' }}>
+                <div className={`title text-2xl sm:text-5xl font-bold leading-tight mb-2 transition-all duration-500 ${index === currentIndex ? 'translate-y-0 opacity-100 blur-none' : 'translate-y-12 opacity-0 blur-sm'}`} style={{ transitionDelay: '0.2s' }}>
                   {slide.title}
                 </div>
-                <div className={`topic text-5xl font-bold leading-tight text-[#f1683a] mb-6 transition-all duration-500 ${index === currentIndex ? 'translate-y-0 opacity-100 blur-none' : 'translate-y-12 opacity-0 blur-sm'}`} style={{ transitionDelay: '0.4s' }}>
+                <div className={`topic text-2xl sm:text-5xl font-bold leading-tight text-[#f1683a] mb-6 transition-all duration-500 ${index === currentIndex ? 'translate-y-0 opacity-100 blur-none' : 'translate-y-12 opacity-0 blur-sm'}`} style={{ transitionDelay: '0.4s' }}>
                   {slide.topic}
                 </div>
                 <div className={`des w-full sm:w-4/6 text-sm leading-relaxed mb-8 transition-all duration-500 ${index === currentIndex ? 'translate-y-0 opacity-100 blur-none' : 'translate-y-12 opacity-0 blur-sm'}`} style={{ transitionDelay: '0.6s' }}>
@@ -202,7 +202,7 @@ const Carousel = () => {
                 onClick={() => handleThumbnailClick(item.id)}
                 // Hide all non-active thumbnails on small devices
                 className={`
-          item w-[150px] h-[220px] rounded-xl overflow-hidden cursor-pointer transition-all flex-shrink-0
+          item w-[120px] h-[170px] rounded-xl overflow-hidden cursor-pointer transition-all flex-shrink-0
           ${isActive ? 'ring-2 ring-[#f1683a] scale-110' : 'opacity-70 hover:opacity-90'}
           ${isActive ? 'block' : 'hidden'} sm:block
         `}
