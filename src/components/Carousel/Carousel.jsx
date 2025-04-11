@@ -44,7 +44,7 @@ const Carousel = () => {
   return (
     <Swiper spaceBetween={0} slidesPerView={1} loop={true}
     autoplay={{
-      delay: 3500,
+      delay: 4000,
       disableOnInteraction: false,
     }}
     modules={[Autoplay]}
