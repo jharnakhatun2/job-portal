@@ -13,6 +13,14 @@ const SinglePage = () => {
         <div>
         <p>Post Date: <span>July 10, 2023</span> <span>378</span></p>
         </div>
+        <div>
+            <div>
+                <p>Applications 1</p>
+            </div>
+            <div>
+                <p>Views <span>13102</span></p>
+            </div>
+        </div>
         
         </div>
       </div>
