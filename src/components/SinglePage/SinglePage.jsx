@@ -1,6 +1,7 @@
 import React from "react"
 import { FaLocationDot } from "react-icons/fa6";
 import { MdDateRange } from "react-icons/md";
+import { IoIosDocument } from "react-icons/io";
 
 const SinglePage = () => {
   return (
@@ -18,10 +19,12 @@ const SinglePage = () => {
         <p>Post Date: <span className="font-bold pr-5">July 10, 2023</span> <span>378</span></p>
         </div>
         <div className="flex gap-5">
-            <div>
+            <div className="flex items-center gap-2">
+            <IoIosDocument className="bg-gray-300 text-white w-4 h-4 p-[2px] rounded-full"/>
                 <p>Applications : <span className="font-bold">1</span></p>
             </div>
-            <div>
+            <div className="flex items-center gap-2">
+            <MdDateRange className="bg-gray-300 text-white w-4 h-4 p-[2px] rounded-full"/>
                 <p>Views : <span className="font-bold ">13102</span></p>
             </div>
         </div>
