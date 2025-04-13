@@ -1,5 +1,6 @@
 import React from "react"
 import { FaLocationDot } from "react-icons/fa6";
+import { MdDateRange } from "react-icons/md";
 
 const SinglePage = () => {
   return (
@@ -12,7 +13,8 @@ const SinglePage = () => {
         <FaLocationDot className="bg-gray-300 text-white w-4 h-4 p-[2px] rounded-full"/>
         <p className="text-gray-400">394 Edgware Road, London, W2 1ED</p>
         </div>
-        <div>
+        <div className="flex items-center gap-2">
+        <MdDateRange className="bg-gray-300 text-white w-4 h-4 p-[2px] rounded-full"/>
         <p>Post Date: <span className="font-bold pr-5">July 10, 2023</span> <span>378</span></p>
         </div>
         <div className="flex gap-5">
