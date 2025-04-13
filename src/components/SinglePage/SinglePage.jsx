@@ -1,4 +1,5 @@
 import React from "react"
+import { FaLocationDot } from "react-icons/fa6";
 
 const SinglePage = () => {
   return (
@@ -7,7 +8,8 @@ const SinglePage = () => {
         <img src="/logo/logo1.png" alt="logo" className="border border-gray-200 sm:w-28"/>
         <div className="py-5 sm:py-0 text-gray-500 text-sm space-y-1 tracking-wide">
         <h4 className="text-primary text-lg font-light ">Tix Dog</h4>
-        <div>
+        <div className="flex items-center gap-2">
+        <FaLocationDot className="bg-gray-300 text-white w-4 h-4 p-[2px] rounded-full"/>
         <p className="text-gray-400">394 Edgware Road, London, W2 1ED</p>
         </div>
         <div>
