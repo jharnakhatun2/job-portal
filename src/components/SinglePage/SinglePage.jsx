@@ -2,6 +2,7 @@ import React from "react"
 import { FaLocationDot } from "react-icons/fa6";
 import { MdDateRange } from "react-icons/md";
 import { IoIosDocument } from "react-icons/io";
+import { FaEye } from "react-icons/fa";
 
 const SinglePage = () => {
   return (
@@ -24,7 +25,7 @@ const SinglePage = () => {
                 <p>Applications : <span className="font-bold">1</span></p>
             </div>
             <div className="flex items-center gap-2">
-            <MdDateRange className="bg-gray-300 text-white w-4 h-4 p-[2px] rounded-full"/>
+            <FaEye className="bg-gray-300 text-white w-4 h-4 p-[2px] rounded-full"/>
                 <p>Views : <span className="font-bold ">13102</span></p>
             </div>
         </div>
