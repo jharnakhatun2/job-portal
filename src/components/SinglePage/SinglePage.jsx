@@ -9,7 +9,7 @@ const SinglePage = () => {
     <div className="sm:max-w-7xl mx-auto w-full px-3 xl:px-0 py-8">
       <JobCard/>
       <hr className="text-gray-200 my-2 sm:my-8 "/>
-      <div>
+      <div className="lg:flex gap-10">
         <Body/>
         <SingleSidebar/>
       </div>
