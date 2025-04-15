@@ -1,4 +1,5 @@
 import React from "react"
+import { CiDollar } from "react-icons/ci";
 
 const Body = () => {
   return (
@@ -26,7 +27,16 @@ const Body = () => {
             </div>
             </div>
         </div>
-        <div></div>
+        <div>
+          <h2 className="uppercase font-semibold">Job Detail</h2>
+          <div className="flex items-center gap-2">
+          <CiDollar />
+            <div>
+              <p>Offered Salary</p>
+              <p className="font-bold">£50,000+</p>
+            </div>
+          </div>
+        </div>
       </div>
       <div></div>
     </div>
