@@ -3,7 +3,7 @@ import { CiDollar } from "react-icons/ci";
 
 const Body = () => {
   return (
-    <div className="text-gray-600 text-sm font-inter font-light">
+    <div className="text-gray-600 text-sm font-inter font-light ">
       <div className="lg:flex gap-10">
         <div>
             <h2 className="uppercase font-semibold">Job Overview</h2>
@@ -27,13 +27,13 @@ const Body = () => {
             </div>
             </div>
         </div>
-        <div>
+        <div className="w-full">
           <h2 className="uppercase font-semibold">Job Detail</h2>
-          <div className="flex items-center gap-2">
-          <CiDollar />
+          <div className="flex items-center gap-3 py-3">
+          <CiDollar className="text-black"/>
             <div>
-              <p>Offered Salary</p>
-              <p className="font-bold">£50,000+</p>
+              <p className="text-xs font-bold text-gray-400">Offered Salary</p>
+              <p className="font-bold">£15,000 - £20,000</p>
             </div>
           </div>
         </div>
