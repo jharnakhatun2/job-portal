@@ -74,7 +74,7 @@ const Body = () => {
           </div>
         </div>
         <div className="w-full">
-          <h2 className="uppercase font-semibold border-b border-gray-300 pb-4">Job Detail</h2>
+          <h2 className="uppercase font-semibold border-b border-gray-300 pb-4 pt-5 sm:pt-0">Job Detail</h2>
 
           {
             jobDetails.map((detail, index) => {
