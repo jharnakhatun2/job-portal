@@ -1,3 +1,3 @@
-export const INCREMENT = 'INCREMENT';
-export const DECREMENT = 'DECREMENT';
-export const RESET = 'RESET';
+export const GET_TODO_REQUEST = 'GET_TODO_REQUEST';
+export const GET_TODO_SUCCESS = 'GET_TODO_SUCCESS';
+export const GET_TODO_FAILED = 'GET_TODO_FAILED';

@@ -1,26 +1,32 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux";
-import { decrement, increment, reset } from "../../redux/Action/Action";
+import Loader from "../../util/Loader/Loader";
+import { allTodoActions } from "../../redux/Action/Action";
 
 const Counter = () => {
-    const count = useSelector(state => state.counter);
-    const dispatch = useDispatch();
-    
-    const handleIncrement = () => {
-        dispatch(increment());
-    }
-    const handleDecrement = () => {
-        dispatch(decrement());
-    }
-    const handleReset = () =>{
-        dispatch(reset())
-    }
+  const stateData = useSelector(state => state.todos);
+console.log(stateData);
+const { isLoading, todos, error } = stateData;
+  const dispatch = useDispatch();
+
+  useEffect(()=>{
+    dispatch(allTodoActions())
+  },[])
+
+  if(isLoading){
+    return <Loader/>
+  }
+
+  if(error) { 
+    return <h1>An error is occured !!!</h1>
+  }
   return (
     <div>
-      <h1>Counter : {count}</h1>
-      <button onClick={handleIncrement} className="btn btn-primary">Increment</button>
-      <button onClick={handleDecrement} className="btn btn-primary">Decrement</button>
-      <button onClick={handleReset} className="btn btn-primary">Reset</button>
+      {todos && todos.map( todo => {
+        return  <div key={todo.id}>
+          <h1>{todo.title}</h1>
+        </div>
+      })}
     </div>
   )
 };

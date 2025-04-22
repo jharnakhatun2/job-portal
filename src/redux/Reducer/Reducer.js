@@ -1,24 +1,33 @@
-import { DECREMENT, INCREMENT, RESET } from "../Constant/Constant";
+import { GET_TODO_FAILED, GET_TODO_REQUEST, GET_TODO_SUCCESS } from "../Constant/Constant";
 
 
-const initialState = { counter : 0}
+const initialState = { 
+    isLoading : false,
+    todos : [],
+    error: null
+}
 const counterReducer = (state=initialState, action) => {
 switch(action.type){
-    case INCREMENT :
+    case GET_TODO_REQUEST :
         return {
             ...state,
-            counter :  state.counter + 1
+            isLoading : true,
         }
-    case DECREMENT :
+    case GET_TODO_SUCCESS :
         return {
             ...state,
-            counter :  state.counter - 1
+            todos :  action.payload,
+            isLoading : false,
+            error: null
         }
-    case RESET :
+    case GET_TODO_FAILED :
         return {
-            ...state,
-            counter :  0
+            ...state,  
+            isLoading : false,
+            todos : [],
+            error: action.payload,
         }
+        
     default :
      return state;
 }
