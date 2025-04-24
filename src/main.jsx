@@ -3,7 +3,9 @@ import './index.css'
 import Router from './routes/Router/Router.jsx'
 import AuthProvider from './context/AuthProvider.jsx'
 import { Provider } from 'react-redux'
-import store from './store.js'
+import store from './app/store.js'
+
+
 
 
 createRoot(document.getElementById('root')).render(
@@ -11,5 +13,6 @@ createRoot(document.getElementById('root')).render(
     <AuthProvider>    
         <Router />
     </AuthProvider>
-  </Provider>,
+    </Provider>
+  ,
 )
