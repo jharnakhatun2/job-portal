@@ -83,14 +83,18 @@ const Body = () => {
             })
           }
 
-          <div>
+          <div className="py-5">
             <Button icon={<CiHeart />}>Shortlist</Button>
             <Button icon={<IoDocumentText />}>Apply Now</Button>
             <Button icon={<FaLinkedinIn/>}>Apply With Linkedin</Button>
+            <span className="text-xs">Never pay anyone for job application test or interview.</span>
           </div>
+          
         </div>
       </div>
-      <div></div>
+      <div>
+        <h2 className="text-xl font-bold">Related Jobs (2)</h2>
+      </div>
     </div>
   )
 };
