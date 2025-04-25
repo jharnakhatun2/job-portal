@@ -1,51 +1,43 @@
 import React from "react"
-import { FiDollarSign } from "react-icons/fi";
-import { FaArrowTrendUp } from "react-icons/fa6";
-import { FaGraduationCap, FaRegUser, FaToolbox } from "react-icons/fa";
-import { MdOutlineManageHistory } from "react-icons/md";
-
-// Create a mapping between icon names and icon components
-const iconComponents = {
-  dollar: FiDollarSign,
-  arrow: FaArrowTrendUp,
-  bag: FaToolbox,
-  cap: FaGraduationCap,
-  man: FaRegUser,
-  industry: MdOutlineManageHistory,
-};
+import Button from "../../util/Button/Button";
+import { IoDocumentText } from "react-icons/io5";
+import { FaLinkedinIn } from "react-icons/fa6";
+import { CiHeart } from "react-icons/ci";
 
 const jobDetails = [
   {
     "topic": "Offered Salary",
-    "icon": "dollar",
+    "icon": "https://i.ibb.co.com/QFQWHDCf/dollar.webp",
     "topic_value": "£15,000 - £20,000"
   },
   {
     "topic": "Career Level",
-    "icon": "arrow",
+    "icon": "https://i.ibb.co.com/3YyVwztY/arrow.webp",
     "topic_value": "Executive"
   },
   {
     "topic": "Experience",
-    "icon": "bag",
+    "icon": "https://i.ibb.co.com/fRz6fd2/bag.webp",
     "topic_value": "2 Years"
   },
   {
     "topic": "Gender",
-    "icon": "man",
+    "icon": "https://i.ibb.co.com/7xkzpJFn/man-search-svgrepo-com.webp",
     "topic_value": "Female"
   },
   {
     "topic": "INDUSTRY",
-    "icon": "industry",
+    "icon": "https://i.ibb.co.com/1YhhwgS0/factory.webp",
     "topic_value": "Management"
   },
   {
     "topic": "Qualification",
-    "icon": "cap",
+    "icon": "https://i.ibb.co.com/fdKmLPft/cap-education-hat-svgrepo-com.webp",
     "topic_value": "Bachelor Degree"
   },
 ]
+
+
 
 const Body = () => {
   return (
@@ -78,10 +70,9 @@ const Body = () => {
 
           {
             jobDetails.map((detail, index) => {
-              const IconComponent = iconComponents[detail.icon] || null;
               return (
                 <div key={index} className="flex items-center gap-4 py-4 border-b border-gray-300">
-                  {IconComponent && <IconComponent className="text-black" />}
+                  <img src={detail.icon} alt="icon" className="text-black w-4"/>
                   <div>
                     <p className="text-xs font-bold text-gray-400">{detail.topic}</p>
                     <p className="font-bold">{detail.topic_value}</p>
@@ -93,12 +84,9 @@ const Body = () => {
           }
 
           <div>
-            <button className="">Shortlist</button>
-            <button>Apply Now</button>
-            <button className="text-primary hover:text-white hover:fill-white font-normal btn btn-outline btn-primary w-full gap-0 transition-all ease-in-out duration-300 uppercase text-xs">
-              <svg aria-label="LinkedIn logo" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="primary" d="M26.111,3H5.889c-1.595,0-2.889,1.293-2.889,2.889V26.111c0,1.595,1.293,2.889,2.889,2.889H26.111c1.595,0,2.889-1.293,2.889-2.889V5.889c0-1.595-1.293-2.889-2.889-2.889ZM10.861,25.389h-3.877V12.87h3.877v12.519Zm-1.957-14.158c-1.267,0-2.293-1.034-2.293-2.31s1.026-2.31,2.293-2.31,2.292,1.034,2.292,2.31-1.026,2.31-2.292,2.31Zm16.485,14.158h-3.858v-6.571c0-1.802-.685-2.809-2.111-2.809-1.551,0-2.362,1.048-2.362,2.809v6.571h-3.718V12.87h3.718v1.686s1.118-2.069,3.775-2.069,4.556,1.621,4.556,4.975v7.926Z" fillRule="evenodd"></path></svg>
-              Apply with Linkedin
-            </button>
+            <Button icon={<CiHeart />}>Shortlist</Button>
+            <Button icon={<IoDocumentText />}>Apply Now</Button>
+            <Button icon={<FaLinkedinIn/>}>Apply With Linkedin</Button>
           </div>
         </div>
       </div>

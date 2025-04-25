@@ -13,7 +13,39 @@
     "experience": ["Fresh", "Less Than 1 Year"],
     "gender": ["Male", "Female", "Both"],
     "Industry": ["Development"],
-    "qualification": ["Certificate"]
+    "qualification": ["Certificate"],
+    "jobDetails" : [
+      {
+        "topic": "Offered Salary",
+        "icon": "https://i.ibb.co.com/QFQWHDCf/dollar.webp",
+        "topic_value": "£15,000 - £20,000"
+      },
+      {
+        "topic": "Career Level",
+        "icon": "https://i.ibb.co.com/3YyVwztY/arrow.webp",
+        "topic_value": "Executive"
+      },
+      {
+        "topic": "Experience",
+        "icon": "https://i.ibb.co.com/fRz6fd2/bag.webp",
+        "topic_value": "2 Years"
+      },
+      {
+        "topic": "Gender",
+        "icon": "https://i.ibb.co.com/7xkzpJFn/man-search-svgrepo-com.webp",
+        "topic_value": "Female"
+      },
+      {
+        "topic": "INDUSTRY",
+        "icon": "https://i.ibb.co.com/1YhhwgS0/factory.webp",
+        "topic_value": "Management"
+      },
+      {
+        "topic": "Qualification",
+        "icon": "https://i.ibb.co.com/fdKmLPft/cap-education-hat-svgrepo-com.webp",
+        "topic_value": "Bachelor Degree"
+      }
+    ]
   }
 ]
 
