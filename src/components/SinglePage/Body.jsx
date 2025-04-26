@@ -72,7 +72,7 @@ const Body = () => {
             jobDetails.map((detail, index) => {
               return (
                 <div key={index} className="flex items-center gap-4 py-4 border-b border-gray-300">
-                  <img src={detail.icon} alt="icon" className="text-black w-4"/>
+                  <img src={detail.icon} alt="icon" className="text-black w-4" />
                   <div>
                     <p className="text-xs font-bold text-gray-400">{detail.topic}</p>
                     <p className="font-bold">{detail.topic_value}</p>
@@ -86,16 +86,31 @@ const Body = () => {
           <div className="py-5">
             <Button icon={<CiHeart />}>Shortlist</Button>
             <Button icon={<IoDocumentText />}>Apply Now</Button>
-            <Button icon={<FaLinkedinIn/>}>Apply With Linkedin</Button>
+            <Button icon={<FaLinkedinIn />}>Apply With Linkedin</Button>
             <span className="text-xs">Never pay anyone for job application test or interview.</span>
           </div>
-          
+
         </div>
       </div>
-      <div>
+      <div className="space-y-3 sm:space-y-2">
         <h2 className="text-xl font-bold">Related Jobs (2)</h2>
+        
+          <div className="sm:flex gap-3">
+            <p className="text-[16px] text-gray-800 hover:text-primary cursor-pointer">Java Developer Linux Java Dev <span className="text-gray-400 text-sm"> on</span></p>
+            <div className="flex justify-between sm:w-3/5 text-sm">
+              <p className="text-gray-500">July 10, 2023</p>
+              <a href="#" className="text-green-700 underline cursor-pointer">Freelance</a>
+            </div>
+          </div>
+          <div className="sm:flex gap-3">
+            <p className="text-[16px] text-gray-800 hover:text-primary cursor-pointer">Senior Stock Technician Required <span className="text-gray-400 text-sm"> on</span></p>
+            <div className="flex justify-between sm:w-3/5 text-sm">
+              <p className="text-gray-500">July 10, 2023</p>
+              <a href="#" className="text-red-700 underline cursor-pointer">Internship</a>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
   )
 };
 
