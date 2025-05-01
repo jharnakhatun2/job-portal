@@ -41,9 +41,9 @@ const jobDetails = [
 
 const Body = () => {
   return (
-    <div className="text-gray-600 text-sm font-inter font-light ">
-      <div className="lg:flex gap-10">
-        <div>
+    <div className="text-gray-600 text-sm font-inter font-light">
+      <div className="lg:flex justify-between gap-10">
+        <div className="w-full">
           <h2 className="uppercase font-semibold">Job Overview</h2>
           <div className="space-y-2 text-gray-600 text-sm font-inter font-light tracking-wide py-2">
             <p>Far much that one rank beheld bluebird after outside ignobly allegedly more when oh arrogantly vehement irresistibly fussy penguin insect additionally wow absolutely crud meretriciously hastily dalmatian a glowered inset one echidna cassowary some parrot and much as goodness some froze the sullen much connected bat wonderfully on instantaneously eel valiantly petted this along across highhandedly much dog out the much alas evasively neutral lazy reset.</p>
@@ -65,9 +65,9 @@ const Body = () => {
             </div>
           </div>
         </div>
-        <div className="w-full">
+        {/* Job Detail */}
+        <div className="">
           <h2 className="uppercase font-semibold border-b border-gray-300 pb-4 pt-5 sm:pt-0">Job Detail</h2>
-
           {
             jobDetails.map((detail, index) => {
               return (
@@ -79,38 +79,36 @@ const Body = () => {
                   </div>
                 </div>
               )
-
             })
           }
-
           <div className="py-5">
             <Button icon={<CiHeart />}>Shortlist</Button>
             <Button icon={<IoDocumentText />}>Apply Now</Button>
             <Button icon={<FaLinkedinIn />}>Apply With Linkedin</Button>
             <span className="text-xs">Never pay anyone for job application test or interview.</span>
           </div>
-
         </div>
       </div>
+      {/* Related Jobs */}
       <div className="space-y-3 sm:space-y-2">
         <h2 className="text-xl font-bold">Related Jobs (2)</h2>
-        
-          <div className="sm:flex items-center gap-3 border-t border-gray-300 pt-3 pb-1">
-            <p className="text-[16px] text-gray-800 hover:text-primary cursor-pointer">Java Developer Linux Java Dev <span className="text-gray-400 text-sm"> on</span></p>
-            <div className="flex justify-between sm:w-3/5 text-sm">
-              <p className="text-gray-500">July 10, 2023</p>
-              <a href="#" className="text-green-700 underline cursor-pointer">Freelance</a>
-            </div>
+
+        <div className="sm:flex items-center gap-3 border-t border-gray-300 pt-3 pb-1">
+          <p className="text-[16px] text-gray-800 hover:text-primary cursor-pointer">Java Developer Linux Java Dev <span className="text-gray-400 text-sm"> on</span></p>
+          <div className="flex justify-between sm:w-3/5 text-sm">
+            <p className="text-gray-500">July 10, 2023</p>
+            <a href="#" className="text-green-700 underline cursor-pointer">Freelance</a>
           </div>
-          <div className="sm:flex gap-3 border-t border-gray-300 pt-3 pb-1">
-            <p className="text-[16px] text-gray-800 hover:text-primary cursor-pointer">Senior Stock Technician Required <span className="text-gray-400 text-sm"> on</span></p>
-            <div className="flex justify-between sm:w-3/5 text-sm">
-              <p className="text-gray-500">July 10, 2023</p>
-              <a href="#" className="text-red-700 underline cursor-pointer">Internship</a>
-            </div>
+        </div>
+        <div className="sm:flex gap-3 border-t border-gray-300 pt-3 pb-1">
+          <p className="text-[16px] text-gray-800 hover:text-primary cursor-pointer">Senior Stock Technician Required <span className="text-gray-400 text-sm"> on</span></p>
+          <div className="flex justify-between sm:w-3/5 text-sm">
+            <p className="text-gray-500">July 10, 2023</p>
+            <a href="#" className="text-red-700 underline cursor-pointer">Internship</a>
           </div>
         </div>
       </div>
+    </div>
   )
 };
 
