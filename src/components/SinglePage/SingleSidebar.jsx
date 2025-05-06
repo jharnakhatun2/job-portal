@@ -41,6 +41,7 @@ const SingleSidebar = () => {
           <input type="checkbox" className="checkbox checkbox-xs" />
           You accepts our <span className="text-primary">Terms and Conditions</span>
         </label>
+        <button type="submit" className="btn w-full btn-primary mt-6 h-12">Send Email</button>
       </form>
     </div>
   )
