@@ -4,13 +4,13 @@ const SingleSidebar = () => {
   return (
     <div className="text-gray-600 text-sm font-inter font-light min-w-xs">
       <h2 className="uppercase font-semibold pb-4">Contact</h2>
-      <form >   
+      <form >
         {/* Name field  */}
         <div className="relative mb-3">
           <input type="text" id="input-group-1" className="border border-gray-300 text-gray-900 text-sm rounded-lg block w-full ps-3 p-2.5 outline-0" placeholder="Enter Your Name*" />
           <div className="absolute inset-y-0 end-3 flex items-center ps-3.5 pointer-events-none">
             <svg className="w-5 h-5 text-gray-400 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
-            <path d="M8 7C9.65685 7 11 5.65685 11 4C11 2.34315 9.65685 1 8 1C6.34315 1 5 2.34315 5 4C5 5.65685 6.34315 7 8 7Z" fill="currentColor"></path> <path d="M14 12C14 10.3431 12.6569 9 11 9H5C3.34315 9 2 10.3431 2 12V15H14V12Z" fill="currentColor"></path>
+              <path d="M8 7C9.65685 7 11 5.65685 11 4C11 2.34315 9.65685 1 8 1C6.34315 1 5 2.34315 5 4C5 5.65685 6.34315 7 8 7Z" fill="currentColor"></path> <path d="M14 12C14 10.3431 12.6569 9 11 9H5C3.34315 9 2 10.3431 2 12V15H14V12Z" fill="currentColor"></path>
             </svg>
           </div>
         </div>
@@ -28,11 +28,19 @@ const SingleSidebar = () => {
         <div className="relative mb-6">
           <input type="text" id="input-group-1" className="border border-gray-300 text-gray-900 text-sm rounded-lg block w-full ps-3 p-2.5 outline-0" placeholder="Phone Number*" />
           <div className="absolute inset-y-0 end-3 flex items-center ps-3.5 pointer-events-none">
-          <svg className="w-4 h-4 text-gray-400 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-            <path fillRule="evenodd" clipRule="evenodd" d="M8 2C6.34315 2 5 3.34315 5 5V19C5 20.6569 6.34315 22 8 22H16C17.6569 22 19 20.6569 19 19V5C19 3.34315 17.6569 2 16 2H8ZM7 5C7 4.44772 7.44772 4 8 4H16C16.5523 4 17 4.44772 17 5V19C17 19.5523 16.5523 20 16 20H8C7.44772 20 7 19.5523 7 19V5ZM10 17C9.44772 17 9 17.4477 9 18C9 18.5523 9.44772 19 10 19H14C14.5523 19 15 18.5523 15 18C15 17.4477 14.5523 17 14 17H10Z" fill="currentColor"></path>
+            <svg className="w-4 h-4 text-gray-400 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+              <path fillRule="evenodd" clipRule="evenodd" d="M8 2C6.34315 2 5 3.34315 5 5V19C5 20.6569 6.34315 22 8 22H16C17.6569 22 19 20.6569 19 19V5C19 3.34315 17.6569 2 16 2H8ZM7 5C7 4.44772 7.44772 4 8 4H16C16.5523 4 17 4.44772 17 5V19C17 19.5523 16.5523 20 16 20H8C7.44772 20 7 19.5523 7 19V5ZM10 17C9.44772 17 9 17.4477 9 18C9 18.5523 9.44772 19 10 19H14C14.5523 19 15 18.5523 15 18C15 17.4477 14.5523 17 14 17H10Z" fill="currentColor"></path>
             </svg>
           </div>
         </div>
+        {/* Message field */}
+        <div className="mb-6">
+          <textarea className="textarea border border-gray-300 text-gray-900 text-sm rounded-lg block w-full ps-3 p-2.5 outline-0" placeholder="Message should have more than 50 characters"></textarea>
+        </div>
+        <label className="label font-bold">
+          <input type="checkbox" className="checkbox checkbox-xs" />
+          You accepts our <span className="text-primary">Terms and Conditions</span>
+        </label>
       </form>
     </div>
   )
