@@ -2,7 +2,7 @@ import React from "react"
 
 const SingleSidebar = () => {
   return (
-    <div className="text-gray-600 text-sm font-inter font-light min-w-xs">
+    <div className="text-gray-600 text-sm font-inter font-light w-full sm:min-w-xs  mt-10 sm:mt-0">
       <h2 className="uppercase font-semibold pb-4">Contact</h2>
       <form >
         {/* Name field  */}
