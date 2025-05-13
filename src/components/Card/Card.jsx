@@ -1,24 +1,30 @@
-import axios from "axios";
-import { div } from "framer-motion/client";
-import React from "react"
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import Loader from "../../util/Loader/Loader";
 import { useEffect } from "react";
+import { fetchData } from "../../features/posts/PostSlice";
+import { fetchJobData } from "../../features/job/jobSlice";
+
 
 const Card = () => {
-  const [jobData, setJobData] = useState([]);
+  const jobs = useSelector(state => state.job)
+  const { job, isLoading, error } = jobs;
+  const dispatch = useDispatch();
 
-  // data fetching
   useEffect(() => {
-    axios.get('data.json')
-      .then(data => {
-        console.log(data.data)
-        setJobData(data.data);
-      })
+    dispatch(fetchJobData())
   }, [])
 
+  if (isLoading) {
+    return <Loader />
+  }
+
+  if (error) {
+    return <p>Something went wrong!!!</p>
+  }
+  console.log(jobs)
   return (
     <div>
-      {jobData.map((data) => (
+      {job && job.map((data) => (
         <div key={data.id} className="space-y-5 sm:flex gap-3 sm:gap-10 sm:items-start justify-between">
           <img src={data.logo} alt="company logo" className="border border-gray-200" />
           <div className="space-y-3">
@@ -40,7 +46,7 @@ const Card = () => {
                   ))
                 )
               }
-              
+
               <p className="font-semibold">Location <span className="ml-9">{data.location}</span></p>
             </div>
             <p className="text-gray-600 text-sm font-light font-roboto">{data.description.slice(0, 150)}{data.description.length > 150 && "..."} <span className="text-xs text-primary font-bold underline">Read More ➢</span></p>
